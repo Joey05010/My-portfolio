@@ -1,0 +1,332 @@
+/* ---------------------------------------------------- */
+/* Case Study Page Specific Styles (Dark Theme Adaptation) */
+/* ---------------------------------------------------- */
+
+/* This file contains styles unique to the Case Study pages, 
+   inheriting core styles, colors, and typography from styles.css */
+
+/* Remove any background/color resets that conflict with styles.css */
+body {
+/* Ensure body is handled by the main styles.css, remove conflicting light theme styles */
+min-height: 100vh; /* Re-add for consistency */
+}
+
+/* Main Content Wrapper - Use the main max-width from the landing page. */
+.case-study-content {
+max-width: 980px; /* Use landing page max-width */
+margin: 0 auto;
+padding: 2rem 1rem 4rem; /* Adjusted overall bottom padding */
+}
+
+/* Sticky Back Button Styling (Adapted to Dark/Glass Theme) - UNCHANGED */
+.below-nav-back-button {
+position: sticky;
+ top: 70px; 
+ display: inline-block;
+ margin-left: max(1rem, calc(50% - 490px));
+ margin-top: 1.5rem;
+ margin-bottom: -1rem; 
+ z-index: 500;
+
+color: var(--color-dark) !important;
+background: rgba(255, 255, 255, 0.1); 
+backdrop-filter: blur(8px); 
+-webkit-backdrop-filter: blur(8px); 
+border: 1px solid rgba(255, 255, 255, 0.2); 
+ border-radius: 999px;
+ 
+ padding: 0.4rem 1rem;
+ font-weight: 500;
+ font-size: 0.85rem;
+ text-decoration: none;
+ transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+ box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.below-nav-back-button:hover {
+background: rgba(255, 255, 255, 0.2); 
+ transform: translateY(-1px);
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+
+/* --- SECTION STYLING --- */
+
+/* General Section Spacing */
+.content-section {
+    padding-top: 0;
+    margin-bottom: 0;
+}
+
+/* 1. HERO SECTION */
+.intro.hero-section {
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+    padding: 6rem 1rem; /* Increased padding for height */
+    position: relative;
+    overflow: hidden; 
+    border-radius: 12px;
+    
+    /* 🖼️ IMAGE PLACEMENT: Update this path! */
+    background-image: url('/assets/Phile/image\ 1.png'); 
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+/* Overlay for text contrast */
+.intro.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.45); /* Darker overlay */
+    z-index: 1;
+}
+
+.intro .case_title, 
+.intro .hero-subtext {
+    position: relative; 
+    z-index: 2; 
+    color: #fff; /* White text for contrast */
+}
+
+.intro .case_title {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.5rem;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px); 
+    border-radius: 10px;
+    padding: 0.5rem 1.5rem; 
+    display: inline-block;
+}
+.intro .hero-subtext {
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
+    font-weight: 400;
+    max-width: 600px;
+    margin: 1rem auto 0;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+
+/* 2. KEY INFO SECTION (3 Columns) */
+.key-info {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    margin: 4rem auto;
+    padding: 0 1rem;
+    max-width: 700px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.info-column {
+    flex: 1;
+    min-width: 150px;
+}
+
+.column-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-light-accent, #CC9933); /* Use an accent color for titles */
+    margin-bottom: 0.5rem;
+}
+
+.editable-text {
+    font-size: 1rem;
+    color: var(--color-gray);
+    line-height: 1.5;
+}
+
+
+/* 3. FULL-WIDTH MEDIA SECTION */
+.full-width-media {
+    /* Full width container logic */
+    width: 100vw; 
+    margin-left: calc(50% - 50vw); 
+    margin-right: calc(50% - 50vw);
+    
+    /* Optional: Add a subtle background color or glass effect strip here */
+    background: rgba(0, 0, 0, 0.2); 
+    padding: 0; /* Image takes full vertical space */
+}
+
+.full-width-image {
+    display: block;
+    width: 100%;
+    /* Height will adjust automatically to maintain aspect ratio */
+    height: auto; 
+    border-radius: 0;
+}
+
+
+/* 4, 5, 8, 12, 13. CENTERED CONTENT SECTIONS */
+.centered-text {
+    text-align: center;
+    max-width: 700px; /* Constrain text width for readability */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* 6. ICON/TEXT FEATURE SECTION */
+.icon-feature-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 5rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.feature-item:last-child {
+    border-bottom: none;
+}
+
+.icon-placeholder {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    /* Optional styling for the icon background */
+    background: rgba(255, 255, 255, 0.1); 
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.svg-icon {
+    width: 80%;
+    height: 80%;
+    /* Ensure your SVGs use 'currentColor' or are styled to fit the dark theme */
+}
+
+.feature-text {
+    flex-grow: 1;
+    text-align: left;
+    font-size: 1.1rem;
+    color: #8f8f93;
+}
+
+
+/* 7. PERSONAS SECTION */
+.personas {
+    text-align: center;
+}
+
+.persona-images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.persona-img {
+    max-width: 100%;
+    width: clamp(300px, 45vw, 400px); /* Responsive sizing for 2 personas */
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+
+/* 9, 10, 11. MEDIA BLOCKS (User Flow, Lo-Fi, Hi-Fi) */
+.media-block {
+    text-align: center;
+}
+.image-placeholder-block {
+    background: #1a1a1a; /* Dark placeholder color */
+    padding: 1rem;
+    border-radius: 12px;
+}
+.media-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+
+/* CONTACT SECTION & FOOTER - UNCHANGED */
+.contact {
+    text-align: center; 
+    margin: 4rem 0; 
+}
+.contact h2 {
+    margin-bottom: 2rem; 
+    padding-bottom: 0;
+    border-bottom: none;
+    max-width: 100%;
+}
+
+/* ---------------------------------------------------- */
+/* Responsive Adjustments */
+/* ---------------------------------------------------- */
+
+@media (max-width: 768px) {
+    .case-study-content {
+        padding: 1rem 0.5rem 4rem;
+    }
+    
+    .key-info {
+        flex-direction: column;
+        gap: 1.5rem;
+        margin: 2rem auto;
+    }
+    
+    .icon-feature-list {
+        gap: 1.5rem;
+        padding: 0 0.5rem;
+    }
+    
+    .feature-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 0.5rem;
+    }
+    
+    .feature-text {
+        text-align: center;
+    }
+    
+    .persona-images {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .persona-img {
+        width: 100%;
+        max-width: 400px;
+    }
+    
+    .full-width-media {
+        padding: 0;
+    }
+    
+    .intro.hero-section {
+        padding: 4rem 1rem;
+    }
+}
