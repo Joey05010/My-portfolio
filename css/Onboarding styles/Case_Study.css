@@ -69,7 +69,7 @@ box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
     border-radius: 12px;
     
     /* 🖼️ IMAGE PLACEMENT: Update this path! */
-    background-image: url('/assets/Onboarding/mockedup.png'); 
+    background-image: url('assets/Onboarding/mockedup.png'); 
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -331,3 +331,4 @@ box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
     }
 
 }
+
